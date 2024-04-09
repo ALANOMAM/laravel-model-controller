@@ -20,4 +20,4 @@ Route::get('/', [PageController::class, 'index'])->name("home");
 
 
 // rotta per seconda pagina
-Route::get('/secondaPagina', [PageController::class, 'showSeconda']);
+Route::get('/secondaPagina', [PageController::class, 'showSeconda'])->name('seconda');
