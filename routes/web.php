@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\Guest\PageController; // questo è associato alla funzione che importo dai controllers 
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,15 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/* per aggiungere la cartella necessaria per il controller
-   usare " php artisan make:controller Cartella/NomeController "
-   per convenzione si usa spesso "php artisan make:controller Guest/PageController"
-   anche se il nome della cartella e del file sono na scelta nostra
+// NB:Questo file gestirà solo ed esclusivamente le rotte mentre la logica sarà nei controllers 
 
-   NB:la chiamata va fatta in un terminale diverso da quello del backend e frontend
-*/
+// lanciare la funzione "index" del pagecontroller quando visitiamo l'homepage
+Route::get('/', [PageController::class, 'index'])->name("home");
 
-Route::get('/', function () {
 
-    return view('home');
-})->name("home");
+// rotta per seconda pagina
+Route::get('/secondaPagina', [PageController::class, 'showSeconda']);
