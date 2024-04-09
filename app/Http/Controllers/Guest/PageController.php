@@ -32,6 +32,16 @@ class PageController extends Controller
     return view('secondaPagina');
    }
 
+   public function showMovie() {
 
+    // preleviamo tutti i film dalla tabella movies
+
+    // il metodo all() ci restituisce tutte le righe della tabella collegata al Model
+   // $movies = Movie::all();
+
+    // dd($movies);
+
+   return view('movies', /*compact('movies')*/);
+}
 
 }

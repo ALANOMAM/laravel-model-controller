@@ -21,3 +21,6 @@ Route::get('/', [PageController::class, 'index'])->name("home");
 
 // rotta per seconda pagina
 Route::get('/secondaPagina', [PageController::class, 'showSeconda'])->name('seconda');
+
+// rotta per terza pagina, dove andranno i movies
+Route::get('/movies', [PageController::class, 'showMovie'])->name('terza');

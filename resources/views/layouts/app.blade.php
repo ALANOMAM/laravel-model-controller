@@ -16,8 +16,12 @@
         <div class="d-flex gap-4">
         <!--"home" qui è il nome che ho dato alla rotta che riporta alla prima pagina-->
        <a href="{{route('home')}}">link home </a>
+
        <!--"seconda" qui è il nome che ho dato alla rotta che porta alla seconda pagina-->
        <a href="{{route('seconda')}}">link seconda pagina </a>  
+
+       <!--"seconda" qui è il nome che ho dato alla rotta che porta alla seconda pagina-->
+       <a href="{{route('terza')}}">link pagina movies </a>  
         </div>
         
         @yield("content")

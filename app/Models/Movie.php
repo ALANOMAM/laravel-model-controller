@@ -1,4 +1,8 @@
 <?php
+ /*il commando per creare i models come questo è
+    "php artisan make:model NomeModel" nel nostro 
+    caso specifico è "php artisan make:model Movie"
+ */
 
 namespace App\Models;
 
