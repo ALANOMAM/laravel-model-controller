@@ -14,10 +14,10 @@
         <h1>TITOLO</h1>
 
         <div class="d-flex gap-4">
+        <!--"home" qui è il nome che ho dato alla rotta che riporta alla prima pagina-->
+       <a href="{{route('home')}}">link home </a>
        <!--"seconda" qui è il nome che ho dato alla rotta che porta alla seconda pagina-->
-       <a href="{{route('seconda')}}">link seconda pagina </a> 
-       <!--"home" qui è il nome che ho dato alla rotta che riporta alla prima pagina-->
-       <a href="{{route('home')}}">link home </a> 
+       <a href="{{route('seconda')}}">link seconda pagina </a>  
         </div>
         
         @yield("content")
