@@ -25,12 +25,16 @@ class PageController extends Controller
 
     // preleviamo tutti i film dalla tabella movies
     // il metodo all() ci restituisce tutte le righe della tabella collegata al Model
-    $moviesObject = Movie::all();
+    $moviesTable = Movie::all();
 
     //una specie di console log che ci fa accedere alle proprietà della variabile inserita
     // dd($moviesObject);
 
-   return view('movies',   compact('moviesObject'));
+   return view('movies',   compact('moviesTable'));
+   /* "compact('moviesTable')" passa la variabile o tabella "$moviesTable" 
+      tramite la rotta associata al file "movies.blade.php" cosi posso 
+      accedere agli elementi della detta tabella.
+   */
 }
 
 }
