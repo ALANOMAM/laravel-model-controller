@@ -4,6 +4,7 @@
 @section('content')
 <div class="container py-5">
     <h1>CONTENUTI MOVIES</h1>
-    
+
+     
 </div>
 @endsection
