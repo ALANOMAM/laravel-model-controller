@@ -24,3 +24,4 @@ Route::get('/secondaPagina', [PageController::class, 'showSeconda'])->name('seco
 
 // rotta per terza pagina, dove andranno i movies
 Route::get('/movies', [PageController::class, 'showMovie'])->name('terza');
+

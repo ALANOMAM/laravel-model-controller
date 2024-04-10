@@ -10,17 +10,32 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    
+
+
+   //FUNZIONE CHE VERRà SPUTATA NELLA PRIMA PAGINA
     public function index() {
         return view('home');
     }
 
-
+  //--------------------------------------------------------
+  //FUNZIONE CHE VERRà SPUTATA NELLA SECONDA PAGINA (QUI FARO ANCHE I FILTRI)
    public function showSeconda() {
-    return view('secondaPagina');
-   }
+     //FILTRO 1:
+    //nella tabella o model Movie filtro prendendo solo il film con id 2 
+    //il metodo "->first()" ci preleva il primo elemento risultate dalla query
+    $movieElement = Movie::where('id' , 2)->first();
 
-   // creo una funzione *pubblica* chiamata showMovie() in cui ci inserisco la logica che voglio eseguire 
+   //FILTRO 2:
+   //nella tabella o model Movie filtro prendendo solo i film con id maggiore o uguale a tre 
+    //il metodo "->get()" tutti gli elementi risultanti dalla query
+    $movieElements = Movie::where('id' ,'>=', 3)->get();
+
+
+    return view('secondaPagina',compact('movieElement','movieElements'));
+   } 
+
+  //--------------------------------------------------------  
+   //FUNZIONE CHE VERRà SPUTATA NELLA TERZA PAGINA (PAGINA MOVIES) 
    public function showMovie() {
 
     // preleviamo tutti i film dalla tabella movies
@@ -31,10 +46,9 @@ class PageController extends Controller
     // dd($moviesObject);
 
    return view('movies',   compact('moviesTable'));
-   /* "compact('moviesTable')" passa la variabile o tabella "$moviesTable" 
-      tramite la rotta associata al file "movies.blade.php" cosi posso 
-      accedere agli elementi della detta tabella.
-   */
+  
+
 }
+
 
 }
